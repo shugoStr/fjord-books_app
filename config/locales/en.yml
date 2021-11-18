@@ -31,3 +31,6 @@
 
 en:
   hello: "Hello world"
+
+  notice:
+    save: 'Book was successfully created.'

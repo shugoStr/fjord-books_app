@@ -16,3 +16,6 @@ ja:
     destroy: 削除
     back: 戻る
     new_book: 新規作成
+
+  notice:
+    save: 保存に成功しました
