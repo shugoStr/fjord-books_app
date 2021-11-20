@@ -6,7 +6,7 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.page(params[:page]).per(3)
+    @books = page(3)
   end
 
   # GET /books/1
@@ -66,6 +66,10 @@ class BooksController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_book
     @book = Book.find(params[:id])
+  end
+
+  def page(number)
+    Book.page(params[:page]).per(number)
   end
 
   # Only allow a list of trusted parameters through.
