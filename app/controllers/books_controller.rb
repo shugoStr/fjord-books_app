@@ -69,7 +69,7 @@ class BooksController < ApplicationController
   end
 
   def page(number)
-    Book.page(params[:page]).per(number)
+    Book.order(:id).page(params[:page]).per(number)
   end
 
   # Only allow a list of trusted parameters through.
