@@ -9,10 +9,15 @@ ja:
         memo: メモ  #g
         picture: 写真  #g
         title: 題名  #g
+  books:
+    index:
+      title: 本
 
-  header:
-    new: 新規作成
-    edit: 編集画面
+    new:
+      title: 新規作成
+
+    edit:
+      title: 編集画面
 
   button:
     show: 詳細

@@ -34,9 +34,15 @@ en:
     models:
       book: Book
 
-  header:
-    new: New Book
-    edit: Editing Book
+  books:
+    index:
+      title: Book
+
+    new:
+      title: New Book
+
+    edit:
+      title: Edit Book
 
   notice:
     save: 'Book was successfully created.'
