@@ -2,11 +2,12 @@
 
 class BooksController < ApplicationController
   before_action :set_book, only: %i[show edit update destroy]
+  BOOK_PER = 3
 
   # GET /books
   # GET /books.json
   def index
-    @books = page(3)
+    @books = Book.order(:id).page(params[:page]).per(BOOK_PER)
   end
 
   # GET /books/1
@@ -66,10 +67,6 @@ class BooksController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_book
     @book = Book.find(params[:id])
-  end
-
-  def page(number)
-    Book.order(:id).page(params[:page]).per(number)
   end
 
   # Only allow a list of trusted parameters through.
