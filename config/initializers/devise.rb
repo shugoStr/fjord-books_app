@@ -129,10 +129,10 @@ Devise.setup do |config|
   # config.pepper = '97e45227db6b7a29da8db54f2b9c41b352d53ca4c1abe03687f8ded494f5882424741514bab7a405b48c689cfb1c788181d7fcaa666316df7230785acbbbb56f'
 
   # Send a notification to the original email when the user's email is changed.
-  # config.send_email_changed_notification = false
+  config.send_email_changed_notification = true
 
   # Send a notification email when the user's password is changed.
-  # config.send_password_change_notification = false
+  config.send_password_change_notification = true
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -307,5 +307,5 @@ Devise.setup do |config|
 
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
-  # config.sign_in_after_change_password = true
+  config.sign_in_after_change_password = true
 end
