@@ -223,6 +223,11 @@ en:
       delete_confirm: "Are you sure?"
       title_new: "New %{name}"
       title_edit: "Editing %{name}"
+    navigate:
+      sign_in: "Sign in"
+      log_in: "Log in"
+      edit_profil: "Edit profil"
+      log_out: "Log out"
   controllers:
     common:
       notice_create: "%{name} was successfully created."
