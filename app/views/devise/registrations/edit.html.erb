@@ -13,6 +13,26 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :post_code %><br />
+    <%= f.text_field :post_code, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :profile %><br />
+    <%= f.text_area :profile, autofocus: true %>
+  </div>
+
+  <div class="field">
     <%= f.label :password %> <i>(<%= t('.leave_blank_if_you_don_t_want_to_change_it') %>)</i><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
     <% if @minimum_password_length %>
