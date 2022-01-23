@@ -220,6 +220,7 @@ en:
       destroy: Destroy
       new: "New record"
       back: Back
+      list: "User list"
       delete_confirm: "Are you sure?"
       title_new: "New %{name}"
       title_edit: "Editing %{name}"
