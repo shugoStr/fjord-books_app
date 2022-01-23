@@ -1,8 +1,26 @@
-<h1>ユーザー詳細</h1>
-<p>[名前]<%= @user.name %></p>
-<p>[Eメール]<%= @user.email %></p>
-<p>[郵便番号]<%= @user.zip %></p>
-<p>[住所]<%= @user.address %></p>
-<p>[自己紹介]<%= @user.profile %></p>
-<%= link_to t('views.common.back'), users_path %>
-<%= link_to t('views.common.home'), books_path %>
+<p>
+  <strong><%= User.human_attribute_name(:username) %>:</strong>
+  <%= current_user.username %>
+</p>
+
+<p>
+  <strong><%= User.human_attribute_name(:email) %>:</strong>
+  <%= current_user.email %>
+</p>
+
+<p>
+  <strong><%= User.human_attribute_name(:post_code) %>:</strong>
+  <%= current_user.post_code %>
+</p>
+
+<p>
+  <strong><%= User.human_attribute_name(:address) %>:</strong>
+  <%= current_user.address %>
+</p>
+
+<p>
+  <strong><%= User.human_attribute_name(:profile) %>:</strong>
+  <%= current_user.profile %>
+</p>
+
+<%= link_to t('views.common.back'), books_path %>
