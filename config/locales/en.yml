@@ -30,4 +30,21 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    models:
+      book: Book
+
+  books:
+    index:
+      title: Book
+
+    new:
+      title: New Book
+
+    edit:
+      title: Edit Book
+
+  notice:
+    save: 'Book was successfully created.'
+    update: 'Book was successfully updated.'
+    destroy: 'Book was successfully destroyed.'
