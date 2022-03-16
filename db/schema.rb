@@ -54,8 +54,8 @@ ActiveRecord::Schema.define(version: 2022_02_28_143807) do
     t.integer "followed_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index "\"follower\", \"followed\"", name: "index_friendships_on_follower_and_followed", unique: true
     t.index ["followed_id"], name: "index_friendships_on_followed_id"
+    t.index ["follower_id", "followed_id"], name: "index_friendships_on_follower_id_and_followed_id", unique: true
     t.index ["follower_id"], name: "index_friendships_on_follower_id"
   end
 

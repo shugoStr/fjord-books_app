@@ -3,14 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'books#index'
   resources :books
-  resources :users, only: %i(index show)
-
-  # フォロー数とフォロワー数表示
-  resources :users do
-    resources :followings, only: :index, module: 'users'
-    resources :followers, only: :index, module: 'users'
+  resources :users, only: %i(index show) do
+    resources :followings, only: :index, module: :users
+    resources :followers, only: :index, module: :users
   end
-
-  # フォローと解除のための中間テーブル用(1対1)
-  resource :friendships, only: %i[create destroy]
+  resources :friendships, only: %i(create destroy)
 end
