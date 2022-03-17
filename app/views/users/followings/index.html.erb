@@ -10,14 +10,14 @@
   </thead>
 
   <tbody>
-    <% @followings.each do |follow_user| %>
+    <% @followings.each do |followings_user| %>
       <tr>
         <th>
-          <% if follow_user.avatar.attached? %>
-            <%= image_tag follow_user.avatar.variant(resize_to_fill: [30, 30])%>
+          <% if followings_user.avatar.attached? %>
+            <%= image_tag followings_user.avatar.variant(resize_to_fill: [50, 50])%>
           <% end %>
         </th>
-        <td><%= link_to follow_user.name, user_path(follow_user.id) %></td>
+        <td><%= link_to followings_user.name, user_path(followings_user.id) %></td>
       </tr>
     <% end %>
   </tbody>
