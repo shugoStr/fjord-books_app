@@ -2,6 +2,7 @@ class ReportsController < ApplicationController
   before_action :set_report, only: %i[ show edit update destroy ]
 
   # GET /reports
+  def index
     @reports = Report.all
   end
 
@@ -53,4 +54,4 @@ class ReportsController < ApplicationController
     def report_params
       params.require(:report).permit(:title, :content)
     end
-end
+  end
