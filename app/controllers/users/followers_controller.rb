@@ -3,6 +3,6 @@
 class Users::FollowersController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @followers = @user.followers
+    @followers = @user.followers.with_attached_avatar
   end
 end
