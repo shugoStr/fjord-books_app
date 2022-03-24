@@ -1,0 +1,26 @@
+<h1><%= t 'followings.follower_list' %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th><%= User.human_attribute_name(:name) %></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @followers.each do |followers_user| %>
+      <tr>
+        <th>
+          <% if followers_user.avatar.attached? %>
+            <%= image_tag followers_user.avatar.variant(resize_to_fill: [50, 50])%>
+          <% end %>
+        </th>
+        <td><%= link_to followers_user.name, user_path(followers_user.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t("views.common.back"), :back %>
