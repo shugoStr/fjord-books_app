@@ -14,6 +14,8 @@ class User < ApplicationRecord
 
   has_many :report, dependent: :destroy
 
+  has_many :comment, dependent: :nullify
+
   def following?(user)
     active_relationships.where(following_id: user.id).exists?
   end
