@@ -1,0 +1,27 @@
+<% commentable.comments.each do |body| %>
+  <p>
+    <%= body.body %>
+  </p>
+
+  <p>
+    <% if body.user.name.blank? %>
+      <%= link_to body.user.email, body.user %>
+    <% else %>
+      <%= link_to body.user.name, body.user %>
+    <% end %>
+  </p>
+
+  <p>
+    <%= l body.created_at, format: :short %>
+  </p>
+<% end %>
+
+<%= form_with(model: [commentable, Comment.new]) do |f| %>
+  <div class="field">
+    <%= f.text_area :body, required: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
