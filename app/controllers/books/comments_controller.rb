@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Books::CommentsController < ApplicationController
   def create
     @commentable = Book.find(params[:book_id])

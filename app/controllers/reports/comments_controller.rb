@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Reports::CommentsController < ApplicationController
   def create
     @commentable = Report.find(params[:report_id])
