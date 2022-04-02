@@ -24,3 +24,5 @@
 <%= link_to t('views.common.back'), books_path %>
 
 <h1><%= Comment.human_attribute_name(:list) %></h1>
+
+<%= render 'comments/comment', commentable: @book, comments: @comments %>

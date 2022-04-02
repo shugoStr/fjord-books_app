@@ -1,27 +1,27 @@
-<% commentable.comments.each do |body| %>
+<% commentable.comments.each do |comment| %>
   <p>
-    <%= body.body %>
+    <%= comment.body %>
   </p>
 
   <p>
-    <% if body.user.name.blank? %>
-      <%= link_to body.user.email, body.user %>
+    <% if comment.user.name.blank? %>
+      <%= link_to comment.user.email, comment.user %>
     <% else %>
-      <%= link_to body.user.name, body.user %>
+      <%= link_to comment.user.name, comment.user %>
     <% end %>
   </p>
 
   <p>
-    <%= l body.created_at, format: :short %>
+    <%= l comment.created_at, format: :short %>
   </p>
 <% end %>
 
-<%= form_with(model: [commentable, Comment.new]) do |f| %>
+<%= form_with(model: [commentable, Comment.new]) do |form_comment| %>
   <div class="field">
-    <%= f.text_area :body, required: true %>
+    <%= form_comment.text_area :body, required: true %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= form_comment.submit %>
   </div>
 <% end %>
