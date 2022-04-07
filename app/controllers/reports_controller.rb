@@ -21,8 +21,7 @@ class ReportsController < ApplicationController
 
   # POST /reports
   def create
-    @report = Report.new(report_params)
-    @report.user = current_user
+    @report = current_user.reports.new(report_params)
 
     respond_to do |format|
       if @report.save!
