@@ -3,13 +3,17 @@
     <%= comment.body %>
   </p>
 
-  <p>
+  <% if comment.user_id.nil? %>
+    <p><%= Comment.human_attribute_name(:unknown) %></p>
+  <% else %>
+    <p>
     <% if comment.user.name.blank? %>
       <%= link_to comment.user.email, comment.user %>
     <% else %>
       <%= link_to comment.user.name, comment.user %>
     <% end %>
-  </p>
+    </p>
+  <% end %>
 
   <p>
     <%= l comment.created_at, format: :short %>
