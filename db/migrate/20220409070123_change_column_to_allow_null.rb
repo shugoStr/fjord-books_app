@@ -1,9 +1,7 @@
 class ChangeColumnToAllowNull < ActiveRecord::Migration[6.1]
-  def up
-    change_column :comments, :user_id, :integer, null: true
-  end
-
-  def down
-    change_column :comments, :user_id, :integer, null: false
+  def change
+    change_column_null(:comments, :user_id, true)
+    change_column_null(:comments, :commentable_id, true)
+    change_column_null(:comments, :commentable_type, true)
   end
 end
