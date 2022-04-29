@@ -1,0 +1,31 @@
+<% commentable.comments.each do |comment| %>
+  <p>
+    <%= comment.body %>
+  </p>
+
+  <% if comment.user_id.nil? %>
+    <p><%= Comment.human_attribute_name(:unknown) %></p>
+  <% else %>
+    <p>
+    <% if comment.user.name.blank? %>
+      <%= link_to comment.user.email, comment.user %>
+    <% else %>
+      <%= link_to comment.user.name, comment.user %>
+    <% end %>
+    </p>
+  <% end %>
+
+  <p>
+    <%= l comment.created_at, format: :short %>
+  </p>
+<% end %>
+
+<%= form_with(model: [commentable, Comment.new]) do |form_comment| %>
+  <div class="field">
+    <%= form_comment.text_area :body, required: true %>
+  </div>
+
+  <div class="actions">
+    <%= form_comment.submit %>
+  </div>
+<% end %>
