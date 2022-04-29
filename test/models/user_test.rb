@@ -27,4 +27,22 @@ class UserTest < ActiveSupport::TestCase
     me.unfollow(she)
     assert_not me.following?(she)
   end
+
+  test "#following?" do
+    me = User.create(email: 'me@example.com', password: 'password')
+    she = User.create(email: 'she@example.com', password: 'password')
+
+    assert_not me.following?(she)
+    Relationship.create(following_id: she.id, follower_id: me.id)
+    assert me.following?(she)
+  end
+
+  test "#followed_by?" do
+    me = User.create(email: 'me@example.com', password: 'password')
+    she = User.create(email: 'she@example.com', password: 'password')
+
+    assert_not me.followed_by?(she)
+    Relationship.create(following_id: me.id, follower_id: she.id)
+    assert me.followed_by?(she)
+  end
 end
