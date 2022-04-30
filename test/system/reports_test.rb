@@ -7,9 +7,9 @@ class ReportsTest < ApplicationSystemTestCase
     @report = reports(:report)
 
     visit root_url
-    fill_in "Eメール", with: "alice@example.com"
-    fill_in "パスワード", with: "password"
-    click_button "ログイン"
+    fill_in 'Eメール', with: 'alice@example.com'
+    fill_in 'パスワード', with: 'password'
+    click_button 'ログイン'
   end
 
   test 'visiting the index' do

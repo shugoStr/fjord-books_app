@@ -7,9 +7,9 @@ class BooksTest < ApplicationSystemTestCase
     @book = books(:ruby_book)
 
     visit root_url
-    fill_in "Eメール", with: "alice@example.com"
-    fill_in "パスワード", with: "password"
-    click_button "ログイン"
+    fill_in 'Eメール', with: 'alice@example.com'
+    fill_in 'パスワード', with: 'password'
+    click_button 'ログイン'
   end
 
   test 'visiting the index' do
