@@ -36,15 +36,15 @@ class BooksTest < ApplicationSystemTestCase
     visit books_url
     click_on '編集'
 
-    fill_in 'メモ', with: @book.memo
-    fill_in 'タイトル', with: @book.title
-    fill_in '著者', with: @book.author
+    fill_in 'メモ', with: 'Rubyの文法の基本をやさしくていねいに解説しています。'
+    fill_in 'タイトル', with: 'Ruby超入門'
+    fill_in '著者', with: '五十嵐 邦明'
     click_on '更新する'
 
     assert_text '本が更新されました。'
-    assert_text @book.memo
-    assert_text @book.title
-    assert_text @book.author
+    assert_text 'Rubyの文法の基本をやさしくていねいに解説しています。'
+    assert_text 'Ruby超入門'
+    assert_text '五十嵐 邦明'
     click_on '戻る'
   end
 
