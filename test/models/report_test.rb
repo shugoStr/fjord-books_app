@@ -21,7 +21,7 @@ class ReportTest < ActiveSupport::TestCase
 
     assert_not_equal Date, report.created_at.class
     assert_equal Date, report.created_on.class
-    assert_equal report.title, 'タイトル'
-    assert_equal report.content, '内容'
+    assert_not_equal Date.today, report.created_at
+    assert_equal Date.today, report.created_on
   end
 end
