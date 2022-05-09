@@ -1,9 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  memo: MyText
-
-two:
-  title: MyString
-  memo: MyText
+ruby_book:
+  title: '楽々ERDレッスン'
+  memo: '実在する帳票から本当に使えるテーブル設計を導く画期的な本！'
+  author: '羽生 章洋'
